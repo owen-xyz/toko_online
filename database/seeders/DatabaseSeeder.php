@@ -35,5 +35,13 @@ User::create([
 'hp' => '081234567893',
 'password' => bcrypt('080102'),
 ]);
+User::create([
+    'nama' => 'sabil',
+    'email' => 'lintaniasabila8@gmail.com',
+    'role' => '2',
+    'status' => 1,
+    'hp' => '081234567893',
+    'password' => bcrypt('080102'),
+    ]);
 }
 }
