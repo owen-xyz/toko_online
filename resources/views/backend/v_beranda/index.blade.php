@@ -14,4 +14,4 @@ akses yang anda miliki sebagai
 ini adalah halaman utama dari aplikasi ini.
 </p>
 <!-- contentAkhir -->
-@endsectio
+@endsection
