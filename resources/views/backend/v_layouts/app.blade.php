@@ -186,6 +186,10 @@
                                 </li>
                             </ul>
                         </li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect
+                                    waves-dark sidebar-link" href="{{ route('backend.login') }}" aria-expanded="false"><i
+                                    class="mdi mdi-view-dashboard"></i><span class="hide-menu">Keluar</span></a>
+                        </li>
                     </ul>
                 </nav>
                 <!-- End Sidebar navigation -->
