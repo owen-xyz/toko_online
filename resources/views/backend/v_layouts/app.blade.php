@@ -301,6 +301,14 @@
     <!-- ============================================================== -->
     <!-- All Jquery -->
     <!-- ============================================================== -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        Swal.fire({
+            icon: 'success',
+            title: 'Berhasil!',
+            text: "{{ session('success') }}"
+        });
+    </script>
     <script src="{{ asset('backend/assets/libs/jquery/dist/jquery.min.js') }}"></script>
     <!-- Bootstrap tether Core JavaScript -->
     <script src="{{ asset('backend/assets/libs/popper.js/dist/umd/popper.min.js') }}"></script>
@@ -325,8 +333,7 @@
         $('#zero_config').DataTable();
     </script>
     <!-- form keluar app -->
-    <form id="keluar-app" action="{{ route('backend.logout') }}" method="POST" class="d-
-    none">
+    <form id="keluar-app" action="{{ route('backend.logout') }}" method="POST" class="d-none">
         @csrf
     </form>
     <!-- form keluar app end -->
