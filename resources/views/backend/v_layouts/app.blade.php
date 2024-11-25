@@ -174,7 +174,9 @@
             waves-dark sidebar-link" href="{{ route('backend.user.index') }}" aria-expanded="false"><i
                                     class="mdi mdi-account"></i><span class="hide-menu">User</span></a>
                         </li>
-                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-shopping"></i><span class="hide-menu">Data Produk </span></a>
+                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark"
+                                href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-shopping"></i><span
+                                    class="hide-menu">Data Produk </span></a>
                             <ul aria-expanded="false" class="collapse first-level">
                                 <li class="sidebar-item"><a href="icon-material.html" class="sidebar-link"><i
                                             class="mdi mdi-chevron-right"></i><span class="hide-menu"> Kategori
@@ -187,8 +189,9 @@
                             </ul>
                         </li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect
-                                    waves-dark sidebar-link" href="{{ route('backend.login') }}" aria-expanded="false"><i
-                                    class="mdi mdi-view-dashboard"></i><span class="hide-menu">Keluar</span></a>
+                                    waves-dark sidebar-link" href="{{ route('backend.login') }}"
+                                aria-expanded="false"><i class="mdi mdi-logout"></i><span
+                                    class="hide-menu">Keluar</span></a>
                         </li>
                     </ul>
                 </nav>
@@ -332,10 +335,31 @@
         ****************************************/
         $('#zero_config').DataTable();
     </script>
+    <script type="text/javascript">
+        //Konfirmasi delete
+        $('.show_confirm').click(function (event) {
+            var form = $(this).closest("form");
+            var konfdelete = $(this).data("konf-delete");
+            event.preventDefault();
+            Swal.fire({
+                title: 'Konfirmasi Hapus Data?',
+                html: "Data yang dihapus <strong>" + konfdelete + "</strong> tidak dapatdikembalikan!",icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Ya, dihapus',
+                cancelButtonText: 'Batal'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    Swal.fire('Terhapus!', 'Data berhasil dihapus.', 'success')
+                        .then(() => {
+                            form.submit();
+                        });
+                }
+            });
+        });
+    </script>
     <!-- form keluar app -->
-    <form id="keluar-app" action="{{ route('backend.logout') }}" method="POST" class="d-none">
-        @csrf
-    </form>
     <!-- form keluar app end -->
 </body>
 
