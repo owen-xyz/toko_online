@@ -9,18 +9,21 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('backend/images/logo.png') }}">
-    <title>feather</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="{{
+    asset('image/icon_univ_bsi.png') }}">
+    <title>tokoonline</title>
     <!-- Custom CSS -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('backend/assets/extra-libs/multicheck/multicheck.css') }}">
-    <link href="{{ asset('backend/assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.css')}}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ asset('backend/extra-
+libs/multicheck/multicheck.css') }}">
+    <link href="{{ asset('backend/assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.css')
+}}" rel="stylesheet">
     <link href="{{ asset('backend/dist/css/style.min.css') }}" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
 </head>
 
 <body>
@@ -52,7 +55,8 @@
                     <a class="navbar-brand" href="index.html">
                         <!-- Logo icon -->
                         <b class="logo-icon p-l-10">
-                            <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+                            <!--You can put here icon as well // <i class="wi wi-
+sunset"></i> //-->
                             <!-- Dark Logo icon -->
                             <img src="{{ asset('image/icon_univ_bsi.png') }}" alt="homepage" class="light-logo" />
                         </b>
@@ -64,9 +68,11 @@
                         </span>
                         <!-- Logo icon -->
                         <!-- <b class="logo-icon"> -->
-                        <!--You can put here icon as well // <i class="wi wi-sunset"></i>//-->
+                        <!--You can put here icon as well // <i class="wi wi-sunset"></i>
+//-->
                         <!-- Dark Logo icon -->
-                        <!-- <img src="assets/images/logo-text.png" alt="homepage" class="light-logo" /> -->
+                        <!-- <img src="assets/images/logo-text.png" alt="homepage"
+class="light-logo" /> -->
                         <!-- </b> -->
                         <!--End Logo icon -->
                     </a>
@@ -78,8 +84,8 @@
                     <!-- ============================================================== -->
                     <a class="topbartoggler d-block d-md-none waves-effect waves-light" href="javascript:void(0)"
                         data-toggle="collapse" data-target="#navbarSupportedContent"
-                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i
-                            class="ti-more"></i></a>
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle
+                    navigation"><i class="ti-more"></i></a>
                 </div>
                 <!-- ============================================================== -->
                 <!-- End Logo -->
@@ -89,54 +95,56 @@
                     <!-- toggle and nav items -->
                     <!-- ============================================================== -->
                     <ul class="navbar-nav float-left mr-auto">
-                        <li class="nav-item d-none d-md-block"><a
-                                class="nav-link sidebartoggler waves-effect waves-light" href="javascript:void(0)"
-                                data-sidebartype="mini-sidebar"><i class="mdi mdi-menu font-24"></i></a></li>
+                        <li class="nav-item d-none d-md-block"><a class="nav-link
+                    sidebartoggler waves-effect waves-light" href="javascript:void(0)" data-sidebartype="mini-
+                    sidebar"><i class="mdi mdi-menu font-24"></i></a></li>
                         <!-- ==============================================================
-                        -->
+                    -->
                         <!-- create new -->
                         <!-- ==============================================================
-                        -->
+                    -->
                         <!-- ==============================================================
-                        -->
+                    -->
                         <!-- Search -->
                         <!-- ==============================================================
-                        -->
+                    -->
                     </ul>
                     <!-- ============================================================== -->
                     <!-- Right side toggle and nav items -->
                     <!-- ============================================================== -->
                     <ul class="navbar-nav float-right">
                         <!-- ==============================================================
-                        -->
+                    -->
                         <!-- Comment -->
                         <!-- ==============================================================
-                        -->
+                    -->
                         <!-- ==============================================================
-                        -->
+                    -->
                         <!-- End Comment -->
                         <!-- ==============================================================
-                        -->
+                    -->
                         <!-- ==============================================================
-                        -->
+                    -->
                         <!-- Messages -->
                         <!-- ==============================================================
-                        -->
+                    -->
                         <!-- ==============================================================
-                        -->
+                    -->
                         <!-- End Messages -->
                         <!-- ==============================================================
-                        -->
+                    -->
                         <!-- ==============================================================
-                        -->
+                    -->
                         <!-- User profile and search -->
                         <!-- ==============================================================
-                                -->
+                    -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href=""
-                                data-toggle="dropdown" aria-haspopup="true" aria- expanded="false"><img
-                                    src="assets/images/users/1.jpg" alt="user" class="rounded-circle" width="31"></a>
-                            <div class="dropdown-menu dropdown-menu-right user-dd animated">
+                            <a class="nav-link dropdown-toggle text-muted waves-effect
+                                waves-dark pro-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-
+                                expanded="false"><img src="assets/images/users/1.jpg" alt="user" class="rounded-circle"
+                                    width="31"></a>
+                            <div class="dropdown-menu dropdown-menu-right user-dd
+                                animated">
                                 <a class="dropdown-item" href="javascript:void(0)"><i class="ti-user m-r-5 m-l-5"></i>
                                     Profil Saya</a>
                                 <a class="dropdown-item" href=""
@@ -167,16 +175,15 @@
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav" class="p-t-30">
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect
-            waves-dark sidebar-link" href="{{ route('backend.beranda') }}" aria-expanded="false"><i
+                                waves-dark sidebar-link" href="{{ route('backend.beranda') }}" aria-expanded="false"><i
                                     class="mdi mdi-view-dashboard"></i><span class="hide-menu">Beranda</span></a>
                         </li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect
-            waves-dark sidebar-link" href="{{ route('backend.user.index') }}" aria-expanded="false"><i
-                                    class="mdi mdi-account"></i><span class="hide-menu">User</span></a>
+                                waves-dark sidebar-link" href="{{ route('backend.user.index') }}"
+                                aria-expanded="false"><i class="mdi mdi-account"></i><span
+                                    class="hide-menu">User</span></a>
                         </li>
-                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark"
-                                href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-shopping"></i><span
-                                    class="hide-menu">Data Produk </span></a>
+                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-shopping"></i><span class="hide-menu">Data Produk </span></a>
                             <ul aria-expanded="false" class="collapse first-level">
                                 <li class="sidebar-item"><a href="icon-material.html" class="sidebar-link"><i
                                             class="mdi mdi-chevron-right"></i><span class="hide-menu"> Kategori
@@ -189,9 +196,8 @@
                             </ul>
                         </li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect
-                                    waves-dark sidebar-link" href="{{ route('backend.login') }}"
-                                aria-expanded="false"><i class="mdi mdi-logout"></i><span
-                                    class="hide-menu">Keluar</span></a>
+                                                        waves-dark sidebar-link" href="{{ route('backend.login') }}"
+                                aria-expanded="false"><i class="mdi mdi-logout"></i><span class="hide-menu">Keluar</span></a>
                         </li>
                     </ul>
                 </nav>
@@ -209,21 +215,6 @@
             <!-- ============================================================== -->
             <!-- Bread crumb and right sidebar toggle -->
             <!-- ============================================================== -->
-            <div class="page-breadcrumb">
-                <div class="row">
-                    <div class="col-12 d-flex no-block align-items-center">
-                        <h4 class="page-title">Tables</h4>
-                        <div class="ml-auto text-right">
-                            <nav aria-label="breadcrumb">
-                                <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                    <li class="breadcrumb-item active" aria- current="page">Library</li>
-                                </ol>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-            </div>
             <!-- ============================================================== -->
             <!-- End Bread crumb and right sidebar toggle -->
             <!-- ============================================================== -->
@@ -237,39 +228,6 @@
                 <!-- @yieldAwal -->
                 @yield('content')
                 <!-- @yieldAkhir-->
-                <div class="row">
-                    <div class="col-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Basic Datatable</h5>
-                                <div class="table-responsive">
-                                    <table id="zero_config" class="table table-striped table-bordered">
-                                        <thead>
-                                            <tr>
-                                                <th>Name</th>
-                                                <th>Position</th>
-                                                <th>Office</th>
-                                                <th>Age</th>
-                                                <th>Start date</th>
-                                                <th>Salary</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>Tiger Nixon</td>
-                                                <td>System Architect</td>
-                                                <td>Edinburgh</td>
-                                                <td>61</td>
-                                                <td>2011/04/25</td>
-                                                <td>$320,800</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <!-- ============================================================== -->
                 <!-- End PAge Content -->
                 <!-- ============================================================== -->
@@ -304,14 +262,6 @@
     <!-- ============================================================== -->
     <!-- All Jquery -->
     <!-- ============================================================== -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script>
-        Swal.fire({
-            icon: 'success',
-            title: 'Berhasil!',
-            text: "{{ session('success') }}"
-        });
-    </script>
     <script src="{{ asset('backend/assets/libs/jquery/dist/jquery.min.js') }}"></script>
     <!-- Bootstrap tether Core JavaScript -->
     <script src="{{ asset('backend/assets/libs/popper.js/dist/umd/popper.min.js') }}"></script>
@@ -335,6 +285,26 @@
         ****************************************/
         $('#zero_config').DataTable();
     </script>
+    <!-- form keluar app -->
+    <form id="keluar-app" action="{{ route('backend.logout') }}" method="POST" class="d-
+none">
+        @csrf
+    </form>
+    <!-- form keluar app end -->
+    <!-- sweetalert -->
+    <script src="{{ asset('sweetalert/sweetalert2.all.min.js') }}"></script>
+    <!-- sweetalert End -->
+    <!-- konfirmasi success-->
+    @if (session('success'))
+        <script>
+            Swal.fire({
+                icon: 'success',
+                title: 'Berhasil!',
+                text: "{{ session('success') }}"
+            });
+        </script>
+    @endif
+    <!-- konfirmasi success End-->
     <script type="text/javascript">
         //Konfirmasi delete
         $('.show_confirm').click(function (event) {
@@ -343,7 +313,9 @@
             event.preventDefault();
             Swal.fire({
                 title: 'Konfirmasi Hapus Data?',
-                html: "Data yang dihapus <strong>" + konfdelete + "</strong> tidak dapatdikembalikan!",icon: 'warning',
+                html: "Data yang dihapus <strong>" + konfdelete + "</strong> tidak dapat
+dikembalikan!",
+icon: 'warning',
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',
                 cancelButtonColor: '#d33',
@@ -359,8 +331,6 @@
             });
         });
     </script>
-    <!-- form keluar app -->
-    <!-- form keluar app end -->
 </body>
 
 </html>
