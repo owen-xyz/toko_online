@@ -2,8 +2,9 @@
 
 use App\Http\Controllers\BerandaController;
 use App\Http\Controllers\UserController;
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\KategoriController;
+use Illuminate\Support\Facades\Route;
 
 // Rute utama yang mengarahkan ke login
 Route::get('/', function () {
@@ -11,7 +12,8 @@ Route::get('/', function () {
 });
 
 // Mengelompokkan rute backend
-Route::group(['prefix' => 'backend', 'as' => 'backend.'], function () {
+Route::prefix('backend')->as('backend.')->group(function () {
+    // Rute untuk login/logout
     Route::get('login', [LoginController::class, 'loginBackend'])
         ->name('login');
 
@@ -25,9 +27,11 @@ Route::group(['prefix' => 'backend', 'as' => 'backend.'], function () {
     Route::middleware('auth')->group(function () {
         Route::get('beranda', [BerandaController::class, 'berandaBackend'])
             ->name('beranda');
-        
+
         // Rute resource untuk UserController
         Route::resource('user', UserController::class);
+
+        // Rute resource untuk KategoriController
+        Route::resource('kategori', KategoriController::class);
     });
 });
-

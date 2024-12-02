@@ -13,8 +13,7 @@
     asset('image/icon_univ_bsi.png') }}">
     <title>tokoonline</title>
     <!-- Custom CSS -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('backend/extra-
-libs/multicheck/multicheck.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('backend/assets/extra-libs/multicheck/multicheck.css') }}">
     <link href="{{ asset('backend/assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.css')
 }}" rel="stylesheet">
     <link href="{{ asset('backend/dist/css/style.min.css') }}" rel="stylesheet">
@@ -58,13 +57,13 @@ libs/multicheck/multicheck.css') }}">
                             <!--You can put here icon as well // <i class="wi wi-
 sunset"></i> //-->
                             <!-- Dark Logo icon -->
-                            <img src="{{ asset('image/icon_univ_bsi.png') }}" alt="homepage" class="light-logo" />
+                            <img src="{{ asset('storage/img-user/icon_univ_bsi.png') }}" alt="homepage" class="light-logo" />
                         </b>
                         <!--End Logo icon -->
                         <!-- Logo text -->
                         <span class="logo-text">
                             <!-- dark Logo text -->
-                            <img src="{{ asset('image/logo_text.png') }}" alt="homepage" class="light-logo" />
+                            <img src="{{ asset('storage/img-user/logo_text.png') }}" alt="homepage" class="light-logo" />
                         </span>
                         <!-- Logo icon -->
                         <!-- <b class="logo-icon"> -->
@@ -138,24 +137,31 @@ class="light-logo" /> -->
                         <!-- User profile and search -->
                         <!-- ==============================================================
                     -->
+                        
+                        <!-- ==============================================================
+                                -->
+                        <!-- User profile and search -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-muted waves-effect
-                                waves-dark pro-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-
-                                expanded="false"><img src="assets/images/users/1.jpg" alt="user" class="rounded-circle"
-                                    width="31"></a>
-                            <div class="dropdown-menu dropdown-menu-right user-dd
-                                animated">
-                                <a class="dropdown-item" href="javascript:void(0)"><i class="ti-user m-r-5 m-l-5"></i>
-                                    Profil Saya</a>
+                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria- expanded="false">
+                                @if (Auth::user()->foto)
+                                    <img src="{{ asset('storage/img-user/' . Auth::user()->foto) }}" alt="user"
+                                        class="rounded-circle" width="31">
+                                @else
+
+                                    <img src="{{ asset('storage/img-user/img-default.jpg') }}" alt="user"
+                                        class="rounded-circle" width="31">
+                                @endif
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right user-dd animated">
+                                <a class="dropdown-item" href="{{route('backend.user.edit', Auth::user()->id) }}"><i class="ti-user m-r-5 m-l-5"></i> Profil
+                                    Saya</a>
                                 <a class="dropdown-item" href=""
                                     onclick="event.preventDefault(); document.getElementById('keluar-app').submit();"><i
                                         class="fa fa-power-off m-r-5 m-l-5"></i> Keluar</a>
                                 <div class="dropdown-divider"></div>
                             </div>
                         </li>
-                        <!-- ==============================================================
-                                -->
-                        <!-- User profile and search -->
+
                         <!-- ==============================================================
                                 -->
                     </ul>
@@ -183,21 +189,19 @@ class="light-logo" /> -->
                                 aria-expanded="false"><i class="mdi mdi-account"></i><span
                                     class="hide-menu">User</span></a>
                         </li>
-                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-shopping"></i><span class="hide-menu">Data Produk </span></a>
+                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark"
+                                href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-shopping"></i><span
+                                    class="hide-menu">Data Produk </span></a>
                             <ul aria-expanded="false" class="collapse first-level">
-                                <li class="sidebar-item"><a href="icon-material.html" class="sidebar-link"><i
-                                            class="mdi mdi-chevron-right"></i><span class="hide-menu"> Kategori
-                                        </span></a>
+                                <li class="sidebar-item"><a href="{{ route('backend.kategori.index') }}" class="sidebar-link"><i
+                                            class="mdi mdi-chevron-right"></i><span class="hide-
+                                menu"> Kategori </span></a>
                                 </li>
                                 <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i
                                             class="mdi mdi-chevron-right"></i><span class="hide-menu"> Produk
                                         </span></a>
                                 </li>
                             </ul>
-                        </li>
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect
-                                                        waves-dark sidebar-link" href="{{ route('backend.login') }}"
-                                aria-expanded="false"><i class="mdi mdi-logout"></i><span class="hide-menu">Keluar</span></a>
                         </li>
                     </ul>
                 </nav>
@@ -265,7 +269,7 @@ class="light-logo" /> -->
     <script src="{{ asset('backend/assets/libs/jquery/dist/jquery.min.js') }}"></script>
     <!-- Bootstrap tether Core JavaScript -->
     <script src="{{ asset('backend/assets/libs/popper.js/dist/umd/popper.min.js') }}"></script>
-    <script src="{{ asset('backend/libs/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('backend/assets/libs/bootstrap/dist/js/bootstrap.min.js') }}"></script>
     <!-- slimscrollbar scrollbar JavaScript -->
     <script src="{{ asset('backend/assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js') }}"></script>
     <script src="{{ asset('backend/assets/extra-libs/sparkline/sparkline.js') }}"></script>
@@ -291,8 +295,10 @@ none">
         @csrf
     </form>
     <!-- form keluar app end -->
+
     <!-- sweetalert -->
     <script src="{{ asset('sweetalert/sweetalert2.all.min.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- sweetalert End -->
     <!-- konfirmasi success-->
     @if (session('success'))
@@ -305,6 +311,7 @@ none">
         </script>
     @endif
     <!-- konfirmasi success End-->
+
     <script type="text/javascript">
         //Konfirmasi delete
         $('.show_confirm').click(function (event) {
@@ -313,9 +320,8 @@ none">
             event.preventDefault();
             Swal.fire({
                 title: 'Konfirmasi Hapus Data?',
-                html: "Data yang dihapus <strong>" + konfdelete + "</strong> tidak dapat
-dikembalikan!",
-icon: 'warning',
+                html: "Data yang dihapus <strong>" + konfdelete + "</strong> tidak dapatdikembalikan!",
+                icon: 'warning',
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',
                 cancelButtonColor: '#d33',
