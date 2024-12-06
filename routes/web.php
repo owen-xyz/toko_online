@@ -1,37 +1,28 @@
 <?php
 
-use App\Http\Controllers\BerandaController;
-use App\Http\Controllers\UserController;
-use App\Http\Controllers\LoginController;
-use App\Http\Controllers\KategoriController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BerandaController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\KategoriController;
 
-// Rute utama yang mengarahkan ke login
+// Redirect root to backend login
 Route::get('/', function () {
     return redirect()->route('backend.login');
 });
 
-// Mengelompokkan rute backend
-Route::prefix('backend')->as('backend.')->group(function () {
-    // Rute untuk login/logout
-    Route::get('login', [LoginController::class, 'loginBackend'])
-        ->name('login');
+// Backend routes with middleware and grouping
+Route::prefix('backend')->name('backend.')->group(function () {
 
-    Route::post('login', [LoginController::class, 'authenticateBackend'])
-        ->name('login');
+    // Authentication routes
+    Route::get('login', [LoginController::class, 'loginBackend'])->name('login');
+    Route::post('login', [LoginController::class, 'authenticateBackend'])->name('login');
+    Route::post('logout', [LoginController::class, 'logoutBackend'])->name('logout');
 
-    Route::post('logout', [LoginController::class, 'logoutBackend'])
-        ->name('logout');
-
-    // Rute yang membutuhkan autentikasi
+    // Protected routes (requires authentication)
     Route::middleware('auth')->group(function () {
-        Route::get('beranda', [BerandaController::class, 'berandaBackend'])
-            ->name('beranda');
-
-        // Rute resource untuk UserController
+        Route::get('beranda', [BerandaController::class, 'berandaBackend'])->name('beranda');
         Route::resource('user', UserController::class);
-
-        // Rute resource untuk KategoriController
         Route::resource('kategori', KategoriController::class);
     });
 });
