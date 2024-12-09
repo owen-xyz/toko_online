@@ -7,26 +7,33 @@ use Illuminate\Database\Eloquent\Model;
 
 class Produk extends Model
 {
-    use HasFactory; // Menggunakan trait HasFactory untuk factory
+    use HasFactory;
 
-    // Menentukan apakah tabel menggunakan timestamp atau tidak
+    protected $table = 'produk';
+    protected $guarded = ['id'];
     public $timestamps = true;
 
-    // Menentukan nama tabel yang digunakan oleh model ini
-    protected $table = 'produk';
-
-    // Melindungi kolom 'id' dari mass assignment
-    protected $guarded = ['id'];
-
-    // Relasi ke model Kategori
+    /**
+     * Relasi ke model Kategori.
+     */
     public function kategori()
     {
-        return $this->belongsTo(Kategori::class); // Relasi 'produk' ke 'kategori' menggunakan belongsTo
+        return $this->belongsTo(Kategori::class);
     }
 
-    // Relasi ke model User
+    /**
+     * Relasi ke model User.
+     */
     public function user()
     {
-        return $this->belongsTo(User::class); // Relasi 'produk' ke 'user' menggunakan belongsTo
+        return $this->belongsTo(User::class);
+    }
+
+    /**
+     * Relasi ke model FotoProduk.
+     */
+    public function fotoProduk()
+    {
+        return $this->hasMany(FotoProduk::class);
     }
 }
