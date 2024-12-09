@@ -5,6 +5,7 @@ use App\Http\Controllers\BerandaController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\ProdukController;
 
 // Redirect root to backend login
 Route::get('/', function () {
@@ -26,3 +27,4 @@ Route::prefix('backend')->name('backend.')->group(function () {
         Route::resource('kategori', KategoriController::class);
     });
 });
+Route::resource('backend/produk', ProdukController::class, ['as' => 'backend'])->middleware('auth');
